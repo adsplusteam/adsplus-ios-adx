@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.static_framework = true
   spec.vendored_frameworks = 'ADPADX/ADPADX.xcframework'
   spec.resource     = 'ADPADX/ADPADX.bundle'
-  spec.dependency 'ADPFoundation'
+  spec.dependency 'ADPFoundation', '1.0.0'
   spec.dependency 'AliyunLogProducer', '3.1.16'
   spec.frameworks = 'UIKit', 'Foundation', 'Security', 'ImageIO', 'MobileCoreServices', 'CoreGraphics', 'QuartzCore'
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }

@@ -1,0 +1,11 @@
+framework module ADPADX {
+  umbrella header "ADPADX-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module ADPADX.Swift {
+  header "ADPADX-Swift.h"
+  requires objc
+}

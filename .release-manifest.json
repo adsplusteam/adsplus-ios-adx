@@ -1,0 +1,10 @@
+{
+  "pod_name": "ADPADX",
+  "variant": "adx",
+  "version": "1.0.0",
+  "source_git_commit": "5105b1ecb8c08552017d8f8ac2c16f9c7feedf2d",
+  "source_git_branch": "V4.4",
+  "artifact_sha256": "de88442fdafb980fbcea0a261772b4555bb97bcf3252344709bdfa5d36100ab3",
+  "bundle_sha256": "e4308eb3fa482d4f9ad0409626e1fa7c6f87ddb13084a33699272972e1bb5a3b",
+  "created_at": "2026-06-24T00:20:30Z"
+}

@@ -8,12 +8,21 @@ Pod::Spec.new do |spec|
   spec.author       = { 'AdsPlus' => 'adsplus@gmail.com' }
   spec.source       = { :git => 'https://github.com/adsplusteam/adsplus-ios-adx.git', :tag => spec.version.to_s }
   spec.platform     = :ios, '13.0'
+  spec.swift_version = '5.0'
   spec.static_framework = true
   spec.vendored_frameworks = 'ADPADX/ADPADX.xcframework'
   spec.resource     = 'ADPADX/ADPADX.bundle'
   spec.dependency 'ADPFoundation', '1.0.0'
   spec.dependency 'AliyunLogProducer', '3.1.16'
-  spec.frameworks = 'UIKit', 'Foundation', 'Security', 'ImageIO', 'MobileCoreServices', 'CoreGraphics', 'QuartzCore'
-  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
-  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
+  spec.frameworks = 'UIKit', 'Foundation', 'Security', 'ImageIO', 'MobileCoreServices', 'CoreGraphics', 'QuartzCore', 'CryptoKit'
+  swift_runtime_search_paths = '$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)'
+  spec.pod_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64',
+    'LIBRARY_SEARCH_PATHS' => swift_runtime_search_paths
+  }
+  spec.user_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64',
+    'LIBRARY_SEARCH_PATHS' => swift_runtime_search_paths,
+    'ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES' => 'YES'
+  }
 end
